@@ -3,4 +3,4 @@ project(PiedraPapelTijera)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PiedraPapelTijera main.cpp)
+add_executable(PiedraPapelTijera main.cpp com/juego/dl/DataAccess.cpp com/juego/dl/DataAccess.h)
