@@ -11,12 +11,12 @@ DataAccess::DataAccess() {
 
 }
 
-void DataAccess::write(string player) {
-    string filename(nombreArchivo);
+void DataAccess::write(string players) {
     ofstream file_out;
 
-    file_out.open(filename, std::ios_base::app);
-    file_out << player + "\n";
+    file_out.open(nombreArchivo.c_str(),ios::out); //Creamos el archivo
+    file_out << players << endl;
+    file_out.close();
 }
 
 string DataAccess::read() {
