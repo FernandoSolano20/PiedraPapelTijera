@@ -1,13 +1,13 @@
-#include "com/juego/bl/Business.h"
+#include "../tl/Controller.h"
 
 using namespace std;
-Business *bl = new Business();
+Controller *controller = new Controller();
 
 void crearJugador() {
     cout << "Digite el nombre" << endl;
     string name;
     cin >> name;
-    bl->agregarJugador(name);
+    controller->agregarJugador(name);
 }
 
 
@@ -26,18 +26,18 @@ int opcJuego() {
 void jugar() {
     Mensaje* msg;
     do {
-        cout << bl->obtenerJugadoresActuales();
+        cout << controller->obtenerJugadoresActuales();
         cout << "Elige jugador 1" << endl;
         int opc1 = opcJuego();
         cout << "Elige jugador 2" << endl;
         int opc2 = opcJuego();
-        msg = bl->obtenerJugadorGanador(opc1, opc2);
+        msg = controller->obtenerJugadorGanador(opc1, opc2);
         cout << msg->getMsg();
     } while (msg->getStatus() != -1);
 }
 
 void iniciar() {
-    bool created = bl->iniciarPartida();
+    bool created = controller->iniciarPartida();
     if (created) {
         jugar();
     } else{
@@ -63,10 +63,10 @@ int main() {
                 iniciar();
                 break;
             case 3:
-                cout << bl->mostrarPuntos();
+                cout << controller->mostrarPuntos();
                 break;
             case 4:
-                cout << bl->jugadoresOrdenados();
+                cout << controller->jugadoresOrdenados();
                 break;
             default:
                 cout << "Opcion no valida" << endl;
