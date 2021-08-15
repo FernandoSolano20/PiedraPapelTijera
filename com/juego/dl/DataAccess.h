@@ -18,7 +18,7 @@ public:
     string read();
 
 private:
-    const string nombreArchivo = "players.txt";
+    const string nombreArchivo = "players/players.txt";
 };
 
 

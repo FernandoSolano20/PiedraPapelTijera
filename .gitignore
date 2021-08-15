@@ -41,7 +41,9 @@
 # *.ipr
 
 # CMake
-cmake-build-*/
+!cmake-build-*/
+cmake-build-*/*
+!cmake-build-*/players
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
