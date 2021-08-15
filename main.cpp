@@ -52,7 +52,7 @@ int main() {
         cout << "1- Definir jugadores" << endl;
         cout << "2- Iniciar juego" << endl;
         cout << "3- Mostrar puntaje" << endl;
-        cout << "4- Mejores 5 records" << endl;
+        cout << "4- Mostrar records ordenados" << endl;
         cout << "5- Salir" << endl;
         cin >> opc;
         switch (opc) {
@@ -62,8 +62,14 @@ int main() {
             case 2:
                 iniciar();
                 break;
+            case 3:
+                cout << bl->mostrarPuntos();
+                break;
+            case 4:
+                cout << bl->jugadoresOrdenados();
+                break;
             default:
-                cout << "Opcion no valida";
+                cout << "Opcion no valida" << endl;
                 break;
         }
     } while (opc != 5);

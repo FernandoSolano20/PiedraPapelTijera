@@ -17,6 +17,8 @@ public:
     void add(Jugador* jugador);
     string toString();
     Node* getHead();
+    string mostrar();
+    void ordernar();
 protected:
     void setHead(Node* node);
     void setSize(int num);

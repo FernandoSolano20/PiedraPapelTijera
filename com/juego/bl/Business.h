@@ -19,7 +19,7 @@ public:
     Mensaje* obtenerJugadorGanador(int opc1, int opc2);
     string obtenerJugadoresActuales();
     string mostrarPuntos();
-    string top5Jugadores();
+    string jugadoresOrdenados();
 private:
     void initList();
     void createJugador(string play);

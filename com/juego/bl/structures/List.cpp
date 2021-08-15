@@ -50,6 +50,34 @@ Node * List::getHead() {
     return head;
 }
 
+string List::mostrar() {
+    string players = "";
+    Node* aux = getHead();
+    int count = 0;
+    while (aux != nullptr) {
+        Jugador* jugador = aux->getData();
+        count++;
+        players += "Jugador #" + to_string(count) + ":\n    Nombre: " + jugador->getNombre() +
+                "\n    Puntos: " + to_string(jugador->getPuntos()) + "\n";
+        aux = aux->getNext();
+    }
+    return players;
+}
+
+void List::ordernar() {
+    Jugador* temp;
+    Node *primero = getHead(), *i, *j;
+    for(i=primero;i->getNext()!=NULL;i=i->getNext()){
+        for(j=i->getNext();j!=NULL;j=j->getNext()){
+            if(i->getData()->getPuntos() < j->getData()->getPuntos()){ // "< de Mayor a menor" y "> de menor a mayor"
+                temp = i->getData();
+                i->setData(j->getData());
+                j->setData(temp);
+            }
+        }
+    }
+}
+
 void List::setHead(Node *node) {
     head = node;
 }

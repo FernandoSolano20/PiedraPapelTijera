@@ -82,11 +82,18 @@ string Business::obtenerJugadoresActuales() {
 }
 
 string Business::mostrarPuntos() {
-    return "";
+    return jugadores->mostrar();
 }
 
-string Business::top5Jugadores() {
-    return "";
+string Business::jugadoresOrdenados() {
+    List* list = new List();
+    Node* aux = jugadores->getHead();
+    while (aux != nullptr) {
+        list->add(aux->getData());
+        aux = aux->getNext();
+    }
+    list->ordernar();
+    return list->mostrar();
 }
 
 void Business::initList() {
